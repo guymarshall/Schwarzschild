@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 public class StartParameters
 {
 	private static final Logger logger = LoggerFactory.getLogger(StartParameters.class);
-	private static int N_NUMBER_OF_ARGS = 5;
+	private static final int N_NUMBER_OF_ARGS = 5;
 
 
 	// The parameters' argument names and data types
