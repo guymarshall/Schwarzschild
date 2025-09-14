@@ -174,7 +174,7 @@ public class SimulatedAnnealing
 	 */
 	public double acceptanceProbability(double dblEnergyCurrent, double dblEnergyNew, double dblTemperature)
 	{
-		double result = 0.0;
+		double result;
 
 		if (dblEnergyNew <= dblEnergyCurrent)
 			result = 1.0;
