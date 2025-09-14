@@ -436,8 +436,8 @@ public class Worker implements Runnable
 		{
 			Entry<Double, Double> entry = getMetricComponentOfDerivativeLevel(liG, null, null, DerivativeLevel.None, i,
 			 mcMetricComponent);
-			adblR[n] = entry.getKey().doubleValue();
-			adblX[n] = entry.getValue().doubleValue();
+			adblR[n] = entry.getKey();
+			adblX[n] = entry.getValue();
 			n++;
 		}
 
@@ -657,20 +657,16 @@ public class Worker implements Runnable
 	{
 		Entry<Double, Double> entry = getMetricComponentOfDerivativeLevel(liG, liGFirstDerivative, liGSecondDerivative,
 		 None, nIndex, A);
-		double dblR = entry.getKey().doubleValue();
-		double dblA = entry.getValue().doubleValue();
+		double dblR = entry.getKey();
+		double dblA = entry.getValue();
 
-		double dblB = getMetricComponentOfDerivativeLevel(liG, liGFirstDerivative, liGSecondDerivative, None, nIndex, B).
-		 getValue().doubleValue();
+		double dblB = getMetricComponentOfDerivativeLevel(liG, liGFirstDerivative, liGSecondDerivative, None, nIndex, B).getValue();
 
-		double dAdR = getMetricComponentOfDerivativeLevel(liG, liGFirstDerivative, liGSecondDerivative, First, nIndex, A)
-		 .getValue().doubleValue();
+		double dAdR = getMetricComponentOfDerivativeLevel(liG, liGFirstDerivative, liGSecondDerivative, First, nIndex, A).getValue();
 
-		double dBdR = getMetricComponentOfDerivativeLevel(liG, liGFirstDerivative, liGSecondDerivative, First, nIndex, B)
-		 .getValue().doubleValue();
+		double dBdR = getMetricComponentOfDerivativeLevel(liG, liGFirstDerivative, liGSecondDerivative, First, nIndex, B).getValue();
 
-		double d2AdR2 = getMetricComponentOfDerivativeLevel(liG, liGFirstDerivative, liGSecondDerivative, Second, nIndex, A)
-		 .getValue().doubleValue();
+		double d2AdR2 = getMetricComponentOfDerivativeLevel(liG, liGFirstDerivative, liGSecondDerivative, Second, nIndex, A).getValue();
 
 		double dblR00 = ((1.0 / (dblB * dblR)) * dAdR)
 		 - ((1.0 / (4.0 * dblA * dblB)) * dAdR * dAdR)
@@ -710,16 +706,16 @@ public class Worker implements Runnable
 		for (int i = 0; i < m_liG.size(); i++)
 		{
 			Entry<Double, Double> entry = getMetricComponentOfDerivativeLevel(m_liG, null, null, None, i, A);
-			double dblR = entry.getKey().doubleValue();
-			double dblA = entry.getValue().doubleValue();
-			double dblB = getMetricComponentOfDerivativeLevel(m_liG, null, null, None, i, B).getValue().doubleValue();
+			double dblR = entry.getKey();
+			double dblA = entry.getValue();
+			double dblB = getMetricComponentOfDerivativeLevel(m_liG, null, null, None, i, B).getValue();
 
 			double dAdR = getMetricComponentOfDerivativeLevel(
-			 m_liG, m_liGFirstDerivative, m_liGSecondDerivative, First, i, A).getValue().doubleValue();
+			 m_liG, m_liGFirstDerivative, m_liGSecondDerivative, First, i, A).getValue();
 			double dBdR = getMetricComponentOfDerivativeLevel(
-			 m_liG, m_liGFirstDerivative, m_liGSecondDerivative, First, i, B).getValue().doubleValue();
+			 m_liG, m_liGFirstDerivative, m_liGSecondDerivative, First, i, B).getValue();
 			double d2AdR2 = getMetricComponentOfDerivativeLevel(
-			 m_liG, m_liGFirstDerivative, m_liGSecondDerivative, Second, i, A).getValue().doubleValue();
+			 m_liG, m_liGFirstDerivative, m_liGSecondDerivative, Second, i, A).getValue();
 			double d2BdR2 = getMetricComponentOfDerivativeLevel(
 			 m_liG, m_liGFirstDerivative, m_liGSecondDerivative, Second, i, B).getValue().doubleValue();
 

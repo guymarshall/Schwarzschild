@@ -103,9 +103,9 @@ public class SimulatedAnnealing
 			}
 
 			Entry<Double, Double> entry = Worker.getMetricComponentOfDerivativeLevel(liG, null, null, None, nStart, A);
-			double dblRStart = entry.getKey().doubleValue();
+			double dblRStart = entry.getKey();
 			entry = Worker.getMetricComponentOfDerivativeLevel(liG, null, null, None, nFinish, A);
-			double dblRFinish = entry.getKey().doubleValue();
+			double dblRFinish = entry.getKey();
 
 			dblSumOfSquaresOfRicciTensorsOverAllR +=
 			 dblSumOfSquaresOfRicciTensors * (dblRFinish - dblRStart) / (nFinish - nStart);
@@ -152,7 +152,7 @@ public class SimulatedAnnealing
 			double dblDelta = dblDeltaPeak * Math.exp(-dblExponent * dblExponent);
 
 			double dblMC = Worker.getMetricComponentOfDerivativeLevel(liGResult, null, null, None, i, mc)
-			 .getValue().doubleValue();
+			 .getValue();
 			Worker.setMetricComponentOfDerivativeLevel(liGResult, null, null, None, i, mc, dblMC + dblDelta);
 		}
 

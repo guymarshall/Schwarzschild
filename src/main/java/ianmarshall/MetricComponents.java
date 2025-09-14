@@ -92,7 +92,7 @@ public class MetricComponents implements Cloneable
 					throw new IllegalArgumentException(String.format("Metric component \"%s\" not found.", mc.toString()));
 			}
 
-		Entry<Double, Double> entryResult = new SimpleEntry<>(Double.valueOf(getR()), Double.valueOf(dbl));
+		Entry<Double, Double> entryResult = new SimpleEntry<>(getR(), dbl);
 		return entryResult;
 	}
 
